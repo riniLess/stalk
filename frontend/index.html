@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta name="description" content="S-Talk — платформа для платных разговоров на любые темы. Скоро запуск!"/>
+    <link rel="stylesheet" href="styles.css">
+    <title>S-Talk — Скоро запуск</title>
+</head>
+<body>
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="container">
+        <header>
+            <span class="badge">Скоро запуск</span>
+            <h1 class="logo">S-Talk</h1>
+        </header>
+
+        <main>
+            <h1 id="title">Разговор на любую тему</h1>
+            <p class="subtitle" id="subtitle">Выбери свою роль</p>
+
+            <nav class="switch" role="tablist" aria-label="Выбор роли">
+                <button id="clientBtn" class="active" role="tab" aria-selected="true" aria-controls="benefits">Я
+                    клиент
+                </button>
+                <button id="sellerBtn" role="tab" aria-selected="false" aria-controls="benefits">Я собеседник</button>
+            </nav>
+
+            <ul class="benefits" id="benefits" role="tabpanel" aria-live="polite"></ul>
+
+            <p class="hint" id="hint"></p>
+            <button class="cta" id="openModal" aria-label="Открыть форму регистрации"></button>
+        </main>
+    </div>
+
+    <footer>
+        <nav aria-label="Дополнительные ссылки">
+            <a href="./privacy.html" target="_blank">Политика конфиденциальности</a>
+            <a href="mailto:accredite@gmail.com">Остались вопросы?</a>
+        </nav>
+    </footer>
+
+    <div class="modal" id="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-box">
+            <button id="closeModal" aria-label="Закрыть">&times;</button>
+            <div class="form">
+                <h2 id="modalTitle">Предварительная регистрация</h2>
+                <p id="modalSubtitle">Будь среди первых и получи бонусные минуты</p>
+
+                <form id="registrationForm">
+                    <input type="email" id="email" placeholder="Ваш email" required aria-label="Email для регистрации"/>
+
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="privacyConsent" required/>
+                        <label for="privacyConsent">
+                            Я согласен с <a href="./privacy.html" target="_blank">политикой конфиденциальности</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="cta" id="submit">Зарегистрироваться</button>
+                </form>
+            </div>
+            <div class="success">
+                <h2>Готово 🙌</h2>
+                <p id="successText">Вы в списке первых участников</p>
+            </div>
+        </div>
+    </div>
+    <script src='index.js'></script>
+</body>
+</html>
